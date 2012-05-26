@@ -1,0 +1,56 @@
+@font-face {  
+  font-family: clemente ;  
+  src: url( /fonts/ClementePDaa-Hairline.ttf );
+}  
+
+.strikethrough {
+	text-decoration: line-through;
+}
+
+body {
+	font-family: "clemente", Arial, "MS Trebuchet", sans-serif;
+	font-size: 200%;
+	min-height: 768px;
+	
+}
+
+#container{
+	min-height: 768px;
+}
+
+#title {
+	h1, h4 {
+		margin: 1px 0px 1px 5px;;		
+	}
+}
+
+#nav {
+	border-bottom: 1px solid #000;
+	border-top: 1px solid #000;
+	
+	font-size: 70%;
+	ul {
+		padding-left: 1px;
+		margin-top: 1px;
+		margin-bottom: 1px;
+	}
+	
+	li {
+		list-style-type: none;
+		display: inline;
+		margin-right: 5px;
+		margin-left: 5px;
+		a {
+			text-decoration : none;
+		}
+		a:hover{
+			text-decoration: underline;
+		}
+		
+	}
+}
+
+#footer {
+	border-top: 1px solid #000;
+	font-size: 70%;
+}

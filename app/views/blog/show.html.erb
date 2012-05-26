@@ -1,2 +1,7 @@
-<h1>Blog#show</h1>
-<p>Find me in app/views/blog/show.html.erb</p>
+
+<% @posts.each do |p| %>
+	<div class="post">
+		<div class="post_title"><h3><%= p.title %></h3></div>
+		<div class="post_excerpt"><%= p.body %></div>		
+	</div>
+<% end %>

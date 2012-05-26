@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mysite</title>
+  <title>a technology journal</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "global", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="container">
+		<div id="header">
+			<div id="title">
+				<h1 id="title_text">a <span class="strikethrough">technology</span> journal</h1>
+				<h4	id="title_subtext">on technology, life and other stuff</h4>
+			</div>
+			<div id="nav">
+				<ul>
+					<li><%= link_to "stories", blog_show_path %></li> |
+					<li><a href="#">wiki</a></li> |
+					<li><a href="#">portfolio</a></li> |
+					<li><a href="#">bookmarks</a></li> |
+					<li><a href="#">aboutme</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="body">
+			<%= yield %>
 
-<%= yield %>
-
+		</div>
+		<div id="footer">
+			<div id="copyright">
+				© daniel valencia backhoff ©
+			</div>
+		</div>	
+	</div>
 </body>
 </html>

@@ -1,3 +1,20 @@
 // Place all the styles related to the Blog controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post {
+	margin: 10px 0px 20px 0px;
+}
+
+.post_title {
+	
+	h3{
+		text-decoration: underline;
+		margin-top: 20px;
+		margin-bottom: 10px;		
+	}
+}
+
+.post_excerpt {
+	font-size: 80%;
+}
