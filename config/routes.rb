@@ -1,5 +1,13 @@
 Mysite::Application.routes.draw do
-  get "blog/show"
+  get "posts/index"
+  
+  get "posts/show"
+
+  get "posts/new"
+
+  post "posts/create"
+
+  delete "posts/destroy"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -50,7 +58,7 @@ Mysite::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'blog#show'
+  root :to => 'posts#index'
 
   # See how all your routes lay out with "rake routes"
 
