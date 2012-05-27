@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = Post.find :all    
+    @posts = Post.all    
   end
   
   def show
@@ -9,10 +9,16 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Post.new if @post.nil?
   end
 
   def create
+    @post = Post.new(params[:post])
+    if(@post.save)
+      redirect_to @post
+    else
+      render :action => new
+    end
   end
 
   def destroy
