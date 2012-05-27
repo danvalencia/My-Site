@@ -1,6 +1,7 @@
+<%= link_to "new post", {:controller => :posts, :action => :new} %>
 <% @posts.each do |p| %>
 	<div class="post">
-		<div class="post_title"><h3><%= p.title %></h3></div>
+		<div class="post_title"><h3><%= link_to p.title, post_path(p) %></h3></div>
 		<div class="post_excerpt"><%= p.body %></div>		
 	</div>
 <% end %>

@@ -1,0 +1,21 @@
+<%= form_for(post) do |f| %>
+<div id="post_title">
+	<span id="post_title_label">
+		Post Title:
+	</span>
+	<span id="post_title_field">
+		<%= f.text_field :title %>
+	</span>  	
+</div>
+<div id="post_body">
+	<span id="post_body_label">
+		Post Title:
+	</span>
+	<span id="post_body_field">
+		<%= f.text_area :body %>
+	</span>  	
+</div>
+<div id="post_submit">
+	<%= f.submit %>
+</div>
+<% end %>
