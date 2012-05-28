@@ -2,7 +2,7 @@ require 'redcarpet'
 
 class Post < ActiveRecord::Base
   attr_accessible :body, :excerpt, :title
-  validates_presence_of :title, :body
+  validates_presence_of :title, :excerpt, :body
   
   def body
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,

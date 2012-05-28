@@ -3,11 +3,19 @@
 <%= form_for(post) do |f| %>
 
 <div id="post_title">
-	<span id="post_title_label">
+	<label for="title" id="post_title_label" class="post_form_label">
 		title:
-	</span>
+	</label>
 	<span id="post_title_field">
 		<%= f.text_field(:title, :size => 100) %>
+	</span>  	
+</div>
+<div id="post_excerpt">
+	<label for="excerpt" id="post_excerpt_label" class="post_form_label">
+		summary:
+	</label>
+	<span id="post_excerpt_field">
+		<%= f.text_field(:excerpt, :size => 100) %>
 	</span>  	
 </div>
 <div id="post_body">
