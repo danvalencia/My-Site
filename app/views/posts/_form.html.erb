@@ -1,4 +1,7 @@
+<%= stylesheet_link_tag    "markdown_editor" %>
+
 <%= form_for(post) do |f| %>
+
 <div id="post_title">
 	<span id="post_title_label">
 		title:
@@ -8,14 +11,21 @@
 	</span>  	
 </div>
 <div id="post_body">
-	<span id="post_body_label">
-		body:
-	</span>
-	<span id="post_body_field">
-		<%= f.text_area :body %>
-	</span>  	
+	<div class="wmd-panel" id="post_body_text">
+	    <div id="wmd-button-bar"></div>
+		<%= f.text_area(:body, :class => "wmd-input", :id => "wmd-input")%>
+	</div> 
+	<div id="wmd-preview" class="wmd-panel wmd-preview"></div> 	
 </div>
 <div id="post_submit">
 	<%= f.submit %>
 </div>
 <% end %>
+
+<script type="text/javascript">
+    (function () {
+        var converter1 = Markdown.getSanitizingConverter();
+        var editor1 = new Markdown.Editor(converter1);
+        editor1.run();
+	})();
+</script>
