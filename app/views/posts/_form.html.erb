@@ -18,9 +18,12 @@
 	preview:
 	<div id="wmd-preview" class="wmd-panel wmd-preview"></div> 	
 </div>
-<div id="post_submit">
+<span id="post_submit">
 	<%= f.submit %>
-</div>
+</span>
+<span>
+	<%= link_to "cancel", :back %>
+</span>
 <% end %>
 
 <script type="text/javascript">
