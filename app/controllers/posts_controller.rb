@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     if(@post.save)
       redirect_to @post
     else
-      render :action => new
+      render :action => :new
     end
   end
 

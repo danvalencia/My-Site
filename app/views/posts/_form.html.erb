@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag    "markdown_editor" %>
+<%= stylesheet_link_tag "markdown_editor" %>
 
 <%= form_for(post) do |f| %>
 
@@ -7,7 +7,7 @@
 		title:
 	</span>
 	<span id="post_title_field">
-		<%= f.text_field :title %>
+		<%= f.text_field(:title, :size => 100) %>
 	</span>  	
 </div>
 <div id="post_body">
@@ -15,6 +15,7 @@
 	    <div id="wmd-button-bar"></div>
 		<%= f.text_area(:body, :class => "wmd-input", :id => "wmd-input")%>
 	</div> 
+	preview:
 	<div id="wmd-preview" class="wmd-panel wmd-preview"></div> 	
 </div>
 <div id="post_submit">
