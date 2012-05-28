@@ -1,4 +1,4 @@
 <div class="post">
 	<div class="post_title"><h3><%= @post.title%></h3></div>
-	<div class="post_excerpt"><%= @post.body %></div>		
+	<div class="post_excerpt"><%= @post.body.html_safe %></div>		
 </div>
