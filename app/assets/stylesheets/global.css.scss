@@ -70,3 +70,8 @@ h2, h4 {
 	border: 2px solid #FF0000;
 	width: 99%;
 }
+
+/* Solution for a div that rails adds to modify appearance of error messages.
+For now I'll just inline it, since I may want to use it in the future.
+*/
+.field_with_errors { display: inline; }
