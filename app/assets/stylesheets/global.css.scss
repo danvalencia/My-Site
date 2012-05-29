@@ -12,7 +12,11 @@ body {
 	min-height: 768px;
 	font-size: 100%;
 	line-height: 1.75em;
+	li {
+		list-style-type:none;
+	}
 }
+
 
 #container{
 	min-height: 768px;
@@ -21,11 +25,20 @@ body {
 }
 
 #header {
+	border-bottom: 1px solid #000;
 	#title_text {
 		font-size: 250%;
 		margin: 1px 0px 10px 5px;
 	}
-	border-bottom: 1px solid #000;
+	#login_logout_link {
+		float : right;
+		a {
+			opacity: 0;			
+		}
+		a:hover{
+			opacity : 1;
+		}
+	}
 	
 }
 
