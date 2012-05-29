@@ -14,8 +14,19 @@
 	<div id="container">
 		<div id="header">
 			<div id="title">
-				<h1 id="title_text">a <span class="strikethrough">technology</span> journal</h1>
+				<a href="<%= root_path %>"><h1 id="title_text">a <span class="strikethrough">technology</span> journal</h1></a>
 				<h4	id="title_subtext">on technology, life and other stuff</h4>
+			</div>
+			<div id="login_logout_link">
+				<% if user_signed_in? %>
+				  <li>
+				  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+				  </li>
+				<% else %>
+				  <li>
+				  <%= link_to('Login', new_user_session_path)  %>  
+				  </li>
+				<% end %>				
 			</div>
 			<!-- <div id="nav">
 				<ul>

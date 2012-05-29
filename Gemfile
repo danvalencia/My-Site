@@ -26,6 +26,7 @@ gem 'therubyracer'
 
 gem 'redcarpet'
 
+gem 'devise'
 #gem 'execjs', :git => 'git://github.com/kennyj/execjs.git'
 
 # To use ActiveModel has_secure_password
