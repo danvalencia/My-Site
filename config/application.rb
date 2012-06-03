@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+#require File.expand_path('../../lib/mysite/configuration', __FILE__)
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -16,7 +17,7 @@ module Mysite
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += Dir["#{config.root}/lib/**/"] 
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -55,5 +56,15 @@ module Mysite
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # Create configuration for the image service
+    config.image_service = ActiveSupport::OrderedOptions.new
+
+    config.image_service.key = '149832844'
+    config.image_service.key_secret = '9053bf3fb3faa3c32a715dd1919508e5'
+    config.image_service.site = "http://api.photobucket.com"
+    config.image_service.username = ENV["IMAGE_SERVICE_USERNAME"]
+    config.image_service.password = ENV["IMAGE_SERVICE_PASSWORD"]
+    
   end
 end
