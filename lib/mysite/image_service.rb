@@ -13,6 +13,21 @@ module OAuth::RequestProxy
     end
 end
 
+module OAuth::Signature::HMAC
+    class Base < OAuth::Signature::Base
+
+        private
+
+        def digest
+            puts ">>> " + signature_base_string
+            self.class.digest_class Object.module_eval("::Digest::#{self.class.digest_klass}")
+            sig = Digest::HMAC.digest(signature_base_string, secret, self.class.digest_class)
+            puts ">>>>>> " + Base64.encode64(sig).chomp.gsub(/\n/,'')
+            sig
+        end
+    end
+end
+
 module Mysite
   
   class ImageService
@@ -40,18 +55,23 @@ module Mysite
       
       #set up an empty access token because its easier
       @access = OAuth::AccessToken.new(@consumer, '', '')
+      #@access = @consumer.get_request_token
       
       logger.debug "Access token: #{@access}"
       
-      #@access = @consumer.get_request_token
       #do a login direct
-      resp = @access.post("/login/direct/" + username, {:password => password, :format=>"json" })
+      response_str = @access.post("/login/direct/" + username, {:password => password })
      
-      logger.debug "Response Body: #{resp.body}"
+      logger.debug "Response Body: #{response_str.body}"
       
-      accessresp = JSON.parse(resp.body)['content']
+      response_body = JSON.parse(response_str.body)
       
-      logger.debug "Json parsed response: #{accessresp}"
+      if response_body["status"] == "Exception" 
+        log.error "Could not login because of error: #{response_body['message']}" 
+        return
+      end
+      
+      logger.debug "Json parsed response: #{response_body}"
       
       #todo catch errors here before parsing content, probably
       @subdomain = accessresp['subdomain']

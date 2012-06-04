@@ -17,9 +17,9 @@ class ImageServiceTest < ActiveSupport::TestCase
   end
     
   def test_can_login
-    # access_token = @image_service.login
-    # 
-    # assert_not_nil access_token
+    #access_token = @image_service.login
+    
+    #assert_not_nil access_token
   end
 
 end
