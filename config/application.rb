@@ -60,11 +60,7 @@ module Mysite
     # Create configuration for the image service
     config.image_service = ActiveSupport::OrderedOptions.new
 
-    config.image_service.key = '149832844'
-    config.image_service.key_secret = '9053bf3fb3faa3c32a715dd1919508e5'
-    config.image_service.site = "http://api.photobucket.com"
-    config.image_service.username = ENV["IMAGE_SERVICE_USERNAME"]
-    config.image_service.password = ENV["IMAGE_SERVICE_PASSWORD"]
-    
+    config.image_service.key = ENV['IMAGE_SERVICE_KEY']
+    config.image_service.key_secret = ENV['IMAGE_KEY_SECRET']
   end
 end

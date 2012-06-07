@@ -1,5 +1,9 @@
 Mysite::Application.routes.draw do
 
+  get "image/new"
+
+  post "image/upload"
+
   devise_for :users, :skip => :registrations
 
   # namespace :user do
