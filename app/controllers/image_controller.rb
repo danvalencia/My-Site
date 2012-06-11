@@ -6,8 +6,11 @@ class ImageController < ApplicationController
 
   def upload
   	image = params[:image]
+  	logger.debug "Params: #{params}"
   	image_service = get_image_service
-  	@debug_text = "Image tempfile path: #{image.tempfile}, Image name: #{image.original_filename}"
+  	@debug_text = "Image object: #{image}"
+  	#@debug_text = "Image tempfile path: #{image.tempfile}, Image name: #{image.original_filename}"
+  	logger.debug @debug_text
   	@image_url = image_service.upload(image.tempfile.path, image.original_filename)
   end
 

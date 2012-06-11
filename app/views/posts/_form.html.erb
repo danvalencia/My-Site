@@ -32,12 +32,55 @@
 <span>
 	<%= link_to "cancel", :back %>
 </span>
+<div id="dialog" title="Dialog">
+	<%= form_tag({:action => :upload}, :multipart => true, :id => "image_upload_form") do %>
+	  <%= file_field_tag 'image' %>
+	  <%= submit_tag("Upload Image", :id => 'upload_btn') %>
+	<% end %>	
+</div>
 <% end %>
 
 <script type="text/javascript">
     (function () {
         var converter1 = new Markdown.Converter();
-        var editor1 = new Markdown.Editor(converter1);
-        editor1.run();
+        var editor = new Markdown.Editor(converter1);
+
+		editor.hooks.set("insertImageDialog", function (callback) {
+			$(document).ready(function(){
+			    $("#dialog").dialog();
+				$("#upload_btn").click(function(){
+					var formData = new FormData();
+					formData.append('image', $('#image')[0].files[0])
+				    $.ajax({
+				        url: '/image/upload',  //server script to process data
+				        type: 'POST',
+				        success: function(responseText,b,c){
+							callback(responseText);
+						},
+				        error: function(responseText, b,c){
+							callback(null);
+						},
+				        // Form data
+				        data: formData,
+				        //Options to tell JQuery not to process data or worry about content-type
+				        cache: false,
+				        contentType: false,
+				        processData: false
+				    });
+				    
+				})
+			});
+			
+			return true;
+		});
+		
+        editor.run();
 	})();
+	
+	function progressHandlingFunction(e){
+	    if(e.lengthComputable){
+	        $('progress').attr({value:e.loaded,max:e.total});
+	    }
+	}
+	
 </script>
