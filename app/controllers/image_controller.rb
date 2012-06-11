@@ -12,6 +12,7 @@ class ImageController < ApplicationController
   	#@debug_text = "Image tempfile path: #{image.tempfile}, Image name: #{image.original_filename}"
   	logger.debug @debug_text
   	@image_url = image_service.upload(image.tempfile.path, image.original_filename)
+  	render :json => {url: @image_url}
   end
 
   private

@@ -30,9 +30,9 @@
 	<%= f.submit %>
 </span>
 <span>
-	<%= link_to "cancel", :back %>
+	<%= link_to "cancel", root_path %>
 </span>
-<div id="dialog" title="Dialog">
+<div id="dialog" title="Dialog" style="display:none">
 	<%= form_tag({:action => :upload}, :multipart => true, :id => "image_upload_form") do %>
 	  <%= file_field_tag 'image' %>
 	  <%= submit_tag("Upload Image", :id => 'upload_btn') %>
@@ -47,7 +47,9 @@
 
 		editor.hooks.set("insertImageDialog", function (callback) {
 			$(document).ready(function(){
-			    $("#dialog").dialog();
+			    $("#dialog").dialog().bind( "dialogclose", function(event, ui) {
+				  callback(null);
+				});
 				$("#upload_btn").click(function(){
 					var formData = new FormData();
 					formData.append('image', $('#image')[0].files[0])
@@ -55,10 +57,15 @@
 				        url: '/image/upload',  //server script to process data
 				        type: 'POST',
 				        success: function(responseText,b,c){
-							callback(responseText);
+							$("#dialog").dialog().unbind( "dialogclose");
+							callback(responseText.url);							
+							$("#dialog").dialog("close");
+							//$("#dialog").css("display", "none");
+							// $("#dialog").hide();
 						},
 				        error: function(responseText, b,c){
 							callback(null);
+							$("#dialog").close();
 						},
 				        // Form data
 				        data: formData,
