@@ -46,7 +46,8 @@
         var editor = new Markdown.Editor(converter1);
 
 		editor.hooks.set("insertImageDialog", function (callback) {
-			$(document).ready(function(){
+			$(document).ready(function(){		
+				$("#dialog").dialog().unbind( "dialogclose");			    		
 			    $("#dialog").dialog().bind( "dialogclose", function(event, ui) {
 				  callback(null);
 				});
