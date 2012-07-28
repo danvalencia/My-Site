@@ -4,10 +4,14 @@
   <title>a technology journal</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    "global", :media => "all" %>
+  <%= stylesheet_link_tag    "shCore", :media => "all" %>
+  <%= stylesheet_link_tag    "shThemeDjango", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "Markdown.Converter.js" %>
   <%= javascript_include_tag "Markdown.Sanitizer.js" %>
   <%= javascript_include_tag "Markdown.Editor.js" %>
+  <%= javascript_include_tag "shCore" %>
+  <%= javascript_include_tag "shBrushJava" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -48,5 +52,8 @@
 			</div>
 		</div>	
 	</div>
+	<script type="text/javascript">
+       SyntaxHighlighter.all();
+	</script>
 </body>
 </html>

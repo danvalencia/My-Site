@@ -78,6 +78,7 @@
 				});
 				
 				$("#upload_btn").click(function(){
+					$("#upload-image-loader").show();
 					var formData = new FormData();
 					formData.append('image', $('#image')[0].files[0])
 				    $.ajax({
@@ -85,11 +86,13 @@
 				        type: 'POST',
 				        success: function(responseText,b,c){
 							$("#dialog").dialog().unbind( "dialogclose");
-							$("#image_url").val(responseText.url)
+							$("#image_url").val(responseText.url);
+							$("#upload-image-loader").hide();
 						},
 				        error: function(responseText, b,c){
 							callback(null);
 							$("#dialog").close();
+							$("#upload-image-loader").hide();
 						},
 				        // Form data
 				        data: formData,
