@@ -1,11 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  body: MyText
+  id: 1
+  body: 'Parent Comment'
+  parent_post: 1
+  parent_comment: nil
+
+two:
+  id: 2
+  body: 'Child Comment Level 2'
   parent_post: 1
   parent_comment: 1
 
-two:
-  body: MyText
+three:
+  id: 3
+  body: 'Child Comment Level 2'
   parent_post: 1
   parent_comment: 1
+
+three:
+  id: 4
+  body: 'Child SubComment Level 3'
+  parent_post: 1
+  parent_comment: 3
