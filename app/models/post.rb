@@ -3,6 +3,7 @@ require 'redcarpet'
 class Post < ActiveRecord::Base
   attr_accessible :body, :excerpt, :title
   validates_presence_of :title, :excerpt, :body
+  has_many :comments, :foreign_key => 'parent_post_id'
   
   def body
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
