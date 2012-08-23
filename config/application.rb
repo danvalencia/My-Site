@@ -15,6 +15,7 @@ module Mysite
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.active_support.deprecation :log
 
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += Dir["#{config.root}/lib/**/"] 
@@ -61,6 +62,6 @@ module Mysite
     config.image_service = ActiveSupport::OrderedOptions.new
 
     config.image_service.key = 'AKIAIO5AYZ5BQ6EMADHA'
-    config.image_service.key_secret = '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'    
+    config.image_service.key_secret = 'TnFmTgmoGomyoZnw0yvh6uNK3hVM+bNaJWekTzQo'
   end
 end

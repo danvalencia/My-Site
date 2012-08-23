@@ -44,11 +44,7 @@
 			<td colspan="2"><%= submit_tag("Upload Image", :id => 'upload_btn') %></td>
 		</tr>
 	<% end %>
-		<!-- <tr>
-			<td colspan="2">Or Enter Image Url:</td>
-		</tr> -->
-
-		<tr>
+		<tr style="border-top:1px">
 			<td>Image Url:</td>		
 			<td><input type="text" id="image_url" style="width:350px"></input></td>
 		</tr>		
@@ -101,6 +97,7 @@
 				        contentType: false,
 				        processData: false
 				    });
+					$("#upload-image-loader").show();
 				})
 			});
 			
