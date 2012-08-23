@@ -1,0 +1,8 @@
+<div class="comment">
+	<div class="comment_created_by">Created By Administrator</div>
+	<div class="comment_created_on">Created On: Today</div>
+	<div class="comment_body"><%= comment.body %></div>
+	<% comment.child_comments.each do |child_comment| %>
+       <%= render :partial => 'comment', :locals => {:comment => child_comment} %>
+	<% end %>
+</div>
