@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   validates_presence_of :title, :excerpt, :body
   has_many :comments, :foreign_key => 'parent_post_id'
   
-  def body
+  def body_to_html
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
             :autolink => true, :space_after_headers => true, :strikethrough => true, :superscript => true)    
     markdown.render read_attribute(:body)
