@@ -16,4 +16,8 @@ class Post < ActiveRecord::Base
   def get_all_child_comments
     Comment.where(:parent_post_id => id, :parent_comment_id => nil)
   end 
+
+  def has_comments
+    comments.size > 0
+  end
 end
