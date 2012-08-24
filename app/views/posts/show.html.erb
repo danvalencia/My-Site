@@ -5,7 +5,21 @@
 	<% if @post.has_comments %>
 	    <div><%= @post.comments.size %> Comments</div>
 	<% end %>
-	
+	<div id="post_comment_title">Post a Comment</div>
+	<%= form_for [@post, @comment] do |f| %>
+		<div id="comment_body">
+			<label for="body" id="comment_body_label">
+				Comment:
+			</label>
+			<span id="comment_body_field">
+				<%= f.text_area(:body) %>
+			</span>  	
+		</div>
+		<span id="post_submit">
+		    <%= f.submit %>
+	    </span>
+	<% end %>
+
 	<% @post.get_all_child_comments.each do |comment| %>
 		<%= render :partial => "comment", :locals => {:comment => comment} %>
 	<% end %>

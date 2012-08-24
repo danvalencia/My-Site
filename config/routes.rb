@@ -10,7 +10,9 @@ Mysite::Application.routes.draw do
   #   root :to => 'posts#index'
   # end
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
