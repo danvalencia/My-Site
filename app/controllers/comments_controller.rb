@@ -12,15 +12,13 @@ class CommentsController < ApplicationController
   end
 
   def create
-    post_id = params[:post_id]
-    comment = params[:comment]
-    
-    # @post = Post.new(params[:post])
-    # if(@post.save)
-    #   redirect_to @post
-    # else
-    #   render :action => :new
-    # end
+    @comment = Comment.new(params[:comment])
+    @comment.parent_post_id = params[:post_id]
+    if(@comment.save)
+      redirect_to @comment.parent_post
+    else
+      redirect_to @comment.parent_post
+    end
   end
 
 end
