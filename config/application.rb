@@ -61,8 +61,8 @@ module Mysite
     # Create configuration for the image service
     config.image_service = ActiveSupport::OrderedOptions.new
 
-    config.image_service.key = 'AKIAIO5AYZ5BQ6EMADHA'
-    config.image_service.key_secret = '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'
+    config.image_service.key = ENV["IMAGE_SERVICE_KEY"]
+    config.image_service.key_secret = ENV["IMAGE_SERVICE_SECRET"]
     config.assets.initialize_on_precompile = false
   end
 end
