@@ -34,7 +34,7 @@
 </span>
 <div id="dialog" title="Insert Image" style="display:none">
 	<img id="upload-image-loader" src="/assets/ajax-loader.gif" style="display:none"/>
-	<%= form_tag({:action => :upload}, :multipart => true, :id => "image_upload_form") do %>
+	<%= form_tag({:controller => :image, :action => :upload}, :multipart => true, :id => "image_upload_form") do %>
 	<table border="0" cellspacing="5" cellpadding="5">
 		<tr>
 			<td style="width:50%"><label for="image">Image: </label></td>
