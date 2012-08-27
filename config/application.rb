@@ -58,11 +58,15 @@ module Mysite
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
-    # Create configuration for the image service
+    # Create configuration for the image service and for facebook
     config.image_service = ActiveSupport::OrderedOptions.new
+    config.facebook_app = ActiveSupport::OrderedOptions.new
 
     config.image_service.key = ENV["IMAGE_SERVICE_KEY"]
     config.image_service.key_secret = ENV["IMAGE_SERVICE_SECRET"]
+    config.facebook_app.id = ENV["FACEBOOK_APP_ID"]
+    config.facebook_app.secret = ENV["FACEBOOK_APP_SECRET"]
+    
     config.assets.initialize_on_precompile = false
   end
 end

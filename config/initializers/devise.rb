@@ -15,6 +15,15 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
+  require "omniauth-facebook"
+  
+  if Rail.env.production?
+    config.omniauth :facebook, Rails.application.config.facebook_app[:id], Rails.application.config.facebook_app[:secret], 
+                    {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  else
+    config.omniauth :facebook, Rails.application.config.facebook_app[:id], Rails.application.config.facebook_app[:secret]
+  end
+
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
