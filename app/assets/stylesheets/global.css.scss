@@ -5,7 +5,7 @@
 
 /* Variables */
 $maxWidth: 800px;
-$topBarHeight: 48px;
+$topBarHeight: 40px;
 $bodyWidth: 1024px;
 
 .strikethrough {
@@ -64,7 +64,7 @@ body {
 	#title_bar_container{
 		width: $bodyWidth;
 		margin: auto;
-		padding-top: 10px;
+		padding-top: 6px;
 		font-family: Myriad Pro,Calibri,Lucida Grande,Lucida Sans,Lucida Sans Unicode,Verdana,sans-serif;
 		color: #FFF;
 		#title_bar{
@@ -150,7 +150,6 @@ h2, h4 {
 }
 
 #footer {
-	border-top: 1px solid #000;
 	font-size: 70%;
 }
 
