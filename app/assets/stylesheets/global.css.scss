@@ -7,6 +7,7 @@
 $maxWidth: 800px;
 $topBarHeight: 40px;
 $bodyWidth: 1024px;
+$headerFooterFont: Myriad Pro,Calibri,Lucida Grande,Lucida Sans,Lucida Sans Unicode,Verdana,sans-serif;
 
 .strikethrough {
 	text-decoration: line-through;
@@ -66,7 +67,7 @@ body {
 		width: $bodyWidth;
 		margin: auto;
 		padding-top: 6px;
-		font-family: Myriad Pro,Calibri,Lucida Grande,Lucida Sans,Lucida Sans Unicode,Verdana,sans-serif;
+		font-family: $headerFooterFont;
 		color: #FFF;
 		#title_bar{
 			a {
@@ -156,7 +157,13 @@ h2, h4 {
 }
 
 #footer {
-	font-size: 70%;
+	//font-size: 70%;
+	border: none;
+	font-family: $headerFooterFont;
+	#copyright {
+		width: 200px;
+		margin: auto;
+	}
 }
 
 #error_messages {
