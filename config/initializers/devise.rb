@@ -17,7 +17,7 @@ Devise.setup do |config|
 
   require "omniauth-facebook"
   
-  if Rail.env.production?
+  if Rails.env.production?
     config.omniauth :facebook, Rails.application.config.facebook_app[:id], Rails.application.config.facebook_app[:secret], 
                     {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   else

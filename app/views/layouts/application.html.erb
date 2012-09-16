@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>a technology journal</title>
+  <%= stylesheet_link_tag "markdown_editor" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    "global", :media => "all" %>
   <%= stylesheet_link_tag    "shCore", :media => "all" %>
@@ -15,6 +16,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="top_bar"></div>
 	<div id="container">
 		<div id="header">
 			<div id="title">
