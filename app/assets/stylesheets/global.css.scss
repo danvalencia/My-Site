@@ -46,6 +46,7 @@ body {
 	}
 	#top_bar{
 		position: fixed;
+		z-index: 1;
 		width : 100%;
 		height: $topBarHeight;
 		background: #ff3019; /* Old browsers */
@@ -150,7 +151,8 @@ h2, h4 {
 }
 
 #new_post_link {
-	font-size: 70%;
+	width: 50px;
+    float: right;
 }
 
 #footer {

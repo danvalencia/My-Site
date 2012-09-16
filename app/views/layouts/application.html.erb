@@ -5,20 +5,21 @@
   <%= stylesheet_link_tag "markdown_editor" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    "global", :media => "all" %>
-  <%= stylesheet_link_tag    "shCore", :media => "all" %>
-  <%= stylesheet_link_tag    "shThemeDjango", :media => "all" %>
+  <%= stylesheet_link_tag    "shCoreEclipse", :media => "all" %>
+  <%= stylesheet_link_tag    "shThemeEclipse", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "Markdown.Converter.js" %>
   <%= javascript_include_tag "Markdown.Sanitizer.js" %>
   <%= javascript_include_tag "Markdown.Editor.js" %>
   <%= javascript_include_tag "shCore" %>
   <%= javascript_include_tag "shBrushJava" %>
+  <%= javascript_include_tag "shBrushXml" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<div id="top_bar">
-		<div id="title_bar_container">
-			<a href="<%= root_path %>"><div id="title_bar">A Technology Journal <span class="black_font">on tech, life and other stuff</span></a><span id="login_logout_link"><%= login_link %></span></div>
+		<div id="title_bar_container" >
+			<a href="<%= root_path %>"><div id="title_bar">A Technology Journal <span class="black_font">on tech, life and other stuff</span></a><span id="login_logout_link"><%= login_link %></span><span id="new_post_link"><%= new_post_link %></span></div>
 		</div>
 	</div>
 	<div id="container">

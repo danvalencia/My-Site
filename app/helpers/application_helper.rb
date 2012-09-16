@@ -6,4 +6,10 @@ module ApplicationHelper
 			link_to('Login', new_user_session_path)
 		end
 	end
+
+	def new_post_link
+		if current_user.try("admin?")
+			link_to "new post", {:controller => :posts, :action => :new} 
+		end
+	end
 end
