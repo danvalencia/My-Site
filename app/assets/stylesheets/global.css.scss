@@ -91,7 +91,14 @@ body {
 	}
 }	
 #body {
-	padding-left: 100px	
+	width: 800px;
+	margin: auto;
+	hr {
+		width: 100%;
+	}
+	a {
+		color: black;
+	}
 }
 
 .black_font {
@@ -157,11 +164,9 @@ h2, h4 {
 }
 
 #footer {
-	//font-size: 70%;
-	border: none;
 	font-family: $headerFooterFont;
 	#copyright {
-		width: 200px;
+		width: 400px;
 		margin: auto;
 	}
 }
