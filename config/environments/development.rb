@@ -36,5 +36,7 @@ Mysite::Application.configure do
   config.assets.debug = true
 
   config.assets.initialize_on_precompile = true
+
+  config.serve_static_assets = false
   
 end

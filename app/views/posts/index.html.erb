@@ -1,6 +1,6 @@
 <% @posts.each do |p| %>
 	<div class="post">
-		<div class="post_title"><h1><%= link_to p.title, post_path(p) %></h1></div>
-		<div ><%= p.body_to_html.html_safe %></div>		
+		<div class="post_title"><h2><%= link_to p.title, post_path(p) %></h2></div>
+		<div class="post_excerpt"><%= p.excerpt %></div>		
 	</div>
 <% end %>
