@@ -16,24 +16,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="top_bar"></div>
+	<div id="top_bar">
+		<div id="title_bar_container">
+			<div id="title_bar">A Technology Journal <span class="black_font">on tech, life and other stuff</span><span id="login_logout_link"><%= login_link %></span></div>
+		</div>
+	</div>
 	<div id="container">
-		<div id="header">
-			<div id="title">
+		<!--<div id="header">-->
+			<!--<div id="title">
 				<a href="<%= root_path %>"><h1 id="title_text">a <span class="strikethrough">technology</span> journal</h1></a>
 				<h4	id="title_subtext">on technology, life and other stuff</h4>
-			</div>
-			<span id="login_logout_link">
-				<% if user_signed_in? %>
-				  <li>
-				  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-				  </li>
-				<% else %>
-				  <li>
-				  <%= link_to('Login', new_user_session_path)  %>  
-				  </li>
-				<% end %>				
-			</span>
+			</div>-->
 			<!-- <div id="nav">
 				<ul>
 					<li><%= link_to "stories", posts_path %></li> |
@@ -43,7 +36,7 @@
 					<li><a href="#">aboutme</a></li>
 				</ul>
 			</div> -->
-		</div>
+		<!--</div>-->
 		<div id="body">
 			<%= yield %>
 
