@@ -68,6 +68,10 @@ body {
 		font-family: Myriad Pro,Calibri,Lucida Grande,Lucida Sans,Lucida Sans Unicode,Verdana,sans-serif;
 		color: #FFF;
 		#title_bar{
+			a {
+				text-decoration: none;
+				color: white;
+			}
 			#login_logout_link {
 				width: 100px;
 				float : right;
