@@ -118,7 +118,8 @@ body {
 	margin: auto;
 	padding-top: $topBarHeight;
 	box-shadow: 0px -25px 25px #C7C5C5;
-	//padding-left: 100px;
+	-webkit-box-shadow: 0px -25px 25px #C7C5C50;
+	-moz-box-shadow:    0px -25px 25px #C7C5C50;
 }
 
 #header {
