@@ -10,6 +10,7 @@
 	<div id="post_comment_title">Post a Comment</div>
 	<div>
 		<%= form_for [@post, @comment] do |f| %>
+		<%= render_error_messages_for(@comment) %>
 			<div id="comment_body_field">
 				<%= f.text_area :body, :id => "comment_text_area", :rows => 10 %>
 			</div>
@@ -19,6 +20,7 @@
 		<% end %>
 	</div>
 	<div>
+
 		<% @post.get_all_child_comments.each do |comment| %>
 			<%= render :partial => "comment", :locals => {:comment => comment} %>
 		<% end %>
