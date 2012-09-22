@@ -19,11 +19,8 @@ class CommentsController < ApplicationController
       redirect_to @comment.parent_post
     else
       logger.info "Save of comment unsuccesfull!!"
-      logger.info "Errors: "
-      @comment.errors.full_messages do |e|
-        logger.info "<error>#{e}</error>"
-      end
-      redirect_to @comment.parent_post
+      @post = @comment.parent_post
+      render :template => "posts/show"
     end
   end
 

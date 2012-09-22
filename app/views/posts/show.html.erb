@@ -1,3 +1,8 @@
+<% if @comment.errors.any? %>
+	<script>
+	  window.location = window.location.href + "#comment_errors";
+	</script>
+<% end %>
 <div class="post">
 	<div class="post_title"><h1><%= @post.title %></h1></div>
 	<div class="post_excerpt"><%= @post.excerpt %></div>		
@@ -10,7 +15,9 @@
 	<div id="post_comment_title">Post a Comment</div>
 	<div>
 		<%= form_for [@post, @comment] do |f| %>
-		<%= render_error_messages_for(@comment) %>
+			<div id="comment_errors">
+				 <%= render_error_messages_for(@comment) %>
+	     	</div>
 			<div id="comment_body_field">
 				<%= f.text_area :body, :id => "comment_text_area", :rows => 10 %>
 			</div>
@@ -22,7 +29,7 @@
 	<div>
 
 		<% @post.get_all_child_comments.each do |comment| %>
-			<%= render :partial => "comment", :locals => {:comment => comment} %>
+			<%= render :partial => "posts/comment", :locals => {:comment => comment} %>
 		<% end %>
 	</div>
 </div>

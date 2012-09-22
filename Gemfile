@@ -18,6 +18,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+ gem 'debugger'
+end
+
 gem 'jquery-rails'
 
 gem 'therubyracer', :platform => :ruby
@@ -46,5 +50,5 @@ gem 'thin'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+
 
