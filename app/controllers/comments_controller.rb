@@ -17,11 +17,8 @@ class CommentsController < ApplicationController
       c.body = params[:comment][:body]
       c.parent_post_id = params[:post_id]
       c.comment_author_id = @comment_author.id
-      c.comment_author = @comment_author
     end
-    # @comment = Comment.new(params[:comment])
-    # @comment.parent_post_id = params[:post_id]
-    # @comment.comment_author = @comment_author
+
     if(@comment.save)
       logger.info "Save of comment succesfull!!"
       redirect_to @comment.parent_post
