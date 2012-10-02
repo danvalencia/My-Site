@@ -21,6 +21,32 @@
 			<div id="comment_body_field">
 				<%= f.text_area :body, :id => "comment_text_area", :rows => 10 %>
 			</div>
+		    <%= f.fields_for :comment_author do |builder|%>
+		    	<div>
+			    	<span id="comment_author_email">
+			    		<%= builder.text_field :email %>
+			    	</span>
+			    	<span>
+			    		email
+			    	</span>
+			    </div>
+		    	<div>
+			    	<span id="comment_author_name">
+			    		<%= builder.text_field :name %>
+			    	</span>
+			    	<span>
+			    		name
+			    	</span>
+			    </div>
+		    	<div>
+			    	<span id="comment_author_website">
+			    		<%= builder.text_field :website %>
+			    	</span>
+			    	<span>
+			    		website
+			    	</span>
+			    </div>
+		    <% end %>
 			<div id="comment_submit">
 			    <%= f.submit %>
 		    </div>

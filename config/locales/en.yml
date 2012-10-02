@@ -3,3 +3,15 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    models: 
+      user: "Customer"
+    attributes:
+      user:
+        comment_author: "Name"
+    errors:
+      models:
+        user:
+          attributes:
+            comment_author:
+              blank: "cannot be empty"

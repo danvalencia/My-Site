@@ -1,7 +1,7 @@
-@font-face {  
+/*@font-face {  
   font-family: clemente ;  
   src: url( /fonts/ClementePDaa-Hairline.ttf );
-}
+}*/
 
 /* Variables */
 $maxWidth: 800px;
@@ -18,6 +18,7 @@ body {
 	padding-left: 0px;
 	padding-top: 0px;
 	/*font-family: "clemente", Arial, "MS Trebuchet", sans-serif;*/
+	font-family: 'Merriweather', serif;
 	width: 100%;
 	min-height: 768px;
 	font-size: 100%;
