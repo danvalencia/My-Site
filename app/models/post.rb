@@ -18,6 +18,10 @@ class Post < ActiveRecord::Base
   end 
 
   def has_comments
-    comments.size > 0
+    actual_comments.size > 0
+  end
+
+  def actual_comments
+    comments.select{|c| c.id != nil}
   end
 end

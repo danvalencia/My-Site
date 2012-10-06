@@ -24,4 +24,13 @@ module ApplicationHelper
 	  end
 	  html_output.html_safe
 	end
+
+	def prettify_date(date)
+		if Time.now.year == date.year
+			format = :no_year
+		else
+			format = :default
+		end
+		I18n.l date, :format => format
+	end
 end

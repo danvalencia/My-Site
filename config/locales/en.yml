@@ -6,6 +6,7 @@ en:
   activerecord:
     models: 
       user: "Customer"
+      comment_author: "Name"
     attributes:
       user:
         comment_author: "Name"
@@ -15,3 +16,7 @@ en:
           attributes:
             comment_author:
               blank: "cannot be empty"
+  time:
+    formats:
+      default: "%B %d, %Y"
+      no_year: "%B %d"

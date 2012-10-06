@@ -1,7 +1,7 @@
 <div class="comment">
 	<div class="comment_title">
-		<span class="comment_created_by">Created By Administrator</span>
-		<span class="comment_created_on"><%= comment.created_at %></span>
+		<span class="comment_created_by"><%=comment.comment_author.name%> said</span>
+		<span class="comment_created_on"> on <%= prettify_date comment.created_at %>...</span>
 	</div>
 	<div class="comment_body"><%= comment.body %></div>
 	<% comment.child_comments.each do |child_comment| %>

@@ -9,9 +9,6 @@
 	<hr/>
 	<div class="post_body"><%= @post.body_to_html.html_safe %></div>		
 
-	<% if @post.has_comments %>
-	    <div><%= @post.comments.size %> Comments</div>
-	<% end %>
 	<!-- <div id="post_comment_title">Post a Comment</div> -->
 	<div>
 		<%= form_for [@post, @comment] do |f| %>
@@ -44,7 +41,7 @@
 		<% end %>
 	</div>
 	<div>
-
+		<%= render_comments_header %>
 		<% @post.get_all_child_comments.each do |comment| %>
 			<%= render :partial => "posts/comment", :locals => {:comment => comment} %>
 		<% end %>

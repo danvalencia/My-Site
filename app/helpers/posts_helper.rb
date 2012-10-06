@@ -12,4 +12,18 @@ module PostsHelper
     html_output.html_safe
   end
   
+  def render_comments_header
+    html_output = ""
+    actual_comments_size = @post.actual_comments.size
+    if actual_comments_size > 0
+      if actual_comments_size == 1 
+        comments_string = "Comment"
+      elsif actual_comments_size > 1
+        comments_string = "Comments"
+      end
+      html_output = "<div>#{actual_comments_size} #{comments_string}</div>"
+      html_output += "<hr id='comment_separator'>"
+    end
+    html_output.html_safe
+  end
 end
