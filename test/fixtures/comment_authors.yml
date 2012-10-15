@@ -2,10 +2,10 @@
 
 one:
   email: my_email@hotmail.com
-  user: Author Blah
+  name: Author Blah
   website: http://www.google.com
 
 two:
   email: MyString
-  user: MyString
+  name: MyString
   website: MyString
