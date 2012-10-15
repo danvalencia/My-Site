@@ -10,21 +10,21 @@
 	<div class="post_body"><%= @post.body_to_html.html_safe %></div>		
 
 	<!-- <div id="post_comment_title">Post a Comment</div> -->
-	<hr/>
-	<h3 id='comment_leave_title'>Leave a reply</h3>
-	<div>
-		<%= form_for [@post, @comment] do |f| %>
-			<div id="comment_errors">
-				 <%= render_error_messages_for(@comment) %>
-	    </div>
-			<div id="comment_body_field">
-				<%= f.text_area :body, :id => "comment_text_area", :rows => 10, :placeholder => "comment"%>
-			</div>
-			<% unless @post.comments_disabled %>
+	<% unless @post.comments_disabled %>
+		<hr/>
+		<h3 id='comment_leave_title'>Leave a reply</h3>
+		<div>
+			<%= form_for [@post, @comment] do |f| %>
+				<div id="comment_errors">
+					 <%= render_error_messages_for(@comment) %>
+		    </div>
+				<div id="comment_body_field">
+					<%= f.text_area :body, :id => "comment_text_area", :rows => 10, :placeholder => "comment"%>
+				</div>
 		    <%= f.fields_for :comment_author do |builder|%>
 		    	<div>
 			    	<span id="comment_author_email">
-			    		<%= builder.text_field :email, :placeholder => "email"  %>
+			    		<%= builder.text_field :email, :placeholder => "email (will not be displayed)"  %>
 			    	</span>
 		 	    </div>
 		    	<div>
@@ -42,8 +42,11 @@
 				    <%= f.submit "Post Comment" %>
 		    </div>
 		  <% end %>
-		<% end %>
-	</div>
+		</div>
+  <% else %>
+		<hr/>
+		<h3 id='comment_leave_title'>Comments are closed</h3>
+	<% end %>
 	<div>
 		<%= render_comments_header %>
 		<% @post.get_all_child_comments.each do |comment| %>

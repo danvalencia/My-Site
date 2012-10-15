@@ -1,7 +1,7 @@
 require 'redcarpet'
 
 class Post < ActiveRecord::Base
-  attr_accessible :body, :excerpt, :title
+  attr_accessible :body, :excerpt, :title, :comments_disabled
   has_many :comments, :foreign_key => 'parent_post_id'
   validates_presence_of :title, :excerpt, :body
   validates_uniqueness_of :title
