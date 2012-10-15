@@ -9,7 +9,7 @@ module ApplicationHelper
 
 	def new_post_link
 		if current_user.try("admin?")
-			link_to "new post", {:controller => :posts, :action => :new} 
+			link_to "new post", new_post_path
 		end
 	end
 

@@ -14,10 +14,11 @@
 		<%= form_for [@post, @comment] do |f| %>
 			<div id="comment_errors">
 				 <%= render_error_messages_for(@comment) %>
-	     	</div>
+	    </div>
 			<div id="comment_body_field">
 				<%= f.text_area :body, :id => "comment_text_area", :rows => 10, :placeholder => "comment"%>
 			</div>
+			<% unless @post.comments_disabled %>
 		    <%= f.fields_for :comment_author do |builder|%>
 		    	<div>
 			    	<span id="comment_author_email">
@@ -35,9 +36,10 @@
 			    	</span>
 			    </div>
 		    <% end %>
-			<div id="comment_submit">
-			    <%= f.submit "Post Comment" %>
+				<div id="comment_submit">
+				    <%= f.submit "Post Comment" %>
 		    </div>
+		  <% end %>
 		<% end %>
 	</div>
 	<div>
