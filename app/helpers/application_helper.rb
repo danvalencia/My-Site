@@ -1,4 +1,10 @@
 module ApplicationHelper
+	SOCIAL_LINKS_MAP = {
+		:twitter => "https://twitter.com/_DanValencia",
+		:linkedin => "http://www.linkedin.com/in/danvalencia"
+	}
+
+
 	def login_link
 		if user_signed_in?
 			link_to('Logout', destroy_user_session_path, :method => :delete)
@@ -32,5 +38,17 @@ module ApplicationHelper
 			format = :default
 		end
 		I18n.l date, :format => format
+	end
+
+	def render_social_links
+		html_output = "<span id='social_links'>"
+		SOCIAL_LINKS_MAP.each do |k,v|
+			tag = "<a href='#{v}'>"
+			tag += "<%= image_tag '#{k}.png' %>"
+			tag += "</a>"
+			html_output += tag
+		end
+		html_output = "</span>"
+		html_output.html_safe
 	end
 end

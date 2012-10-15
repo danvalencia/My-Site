@@ -50,11 +50,22 @@ h2 {
 
 .comment {
 	padding-left: 20px;
+	background-color: #B7E0B7;
+	margin-bottom: 20px;
 
 }
- 
+
+.comment_created_by {
+	font-weight: bold;	
+	font-style: italic;	
+}
+
+.comment_created_on {
+	font-style: italic;	
+}
+
 .comment_title {
-	border-bottom: 1px dotted #CCCCCC;
+
 }
 
 #comment_leave_title{

@@ -22,7 +22,13 @@
 <body>
 	<div id="top_bar">
 		<div id="title_bar_container" >
-			<a href="<%= root_path %>"><div id="title_bar">A Technology Journal <span class="black_font">on tech, life and other stuff</span></a><span id="login_logout_link"><%= login_link %></span><span id="new_post_link"><%= new_post_link %></span></div>
+	 		<a href="<%= root_path %>">
+        <div id="title_bar">A Technology Journal <span class="black_font">on tech, life and other stuff</span>
+      </a>
+      <%= render_social_links %>
+        <span id="login_logout_link"><%= login_link %></span>
+        <span id="new_post_link"><%= new_post_link %></span>
+      </div>
 		</div>
 	</div>
 	<div id="container">
