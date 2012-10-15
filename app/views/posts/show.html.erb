@@ -10,6 +10,8 @@
 	<div class="post_body"><%= @post.body_to_html.html_safe %></div>		
 
 	<!-- <div id="post_comment_title">Post a Comment</div> -->
+	<hr/>
+	<h3 id='comment_leave_title'>Leave a reply</h3>
 	<div>
 		<%= form_for [@post, @comment] do |f| %>
 			<div id="comment_errors">
