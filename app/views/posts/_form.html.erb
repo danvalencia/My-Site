@@ -1,20 +1,20 @@
 <%= form_for(post) do |f| %>
 
 <div id="post_title">
-	<label for="title" id="post_title_label" class="post_form_label">
-		title:
-	</label>
 	<span id="post_title_field">
 		<%= f.text_field(:title, :size => 100) %>
 	</span>  	
+	<label for="title" id="post_title_label" class="post_form_label">
+		title
+	</label>
 </div>
 <div id="post_excerpt">
-	<label for="excerpt" id="post_excerpt_label" class="post_form_label">
-		summary:
-	</label>
 	<span id="post_excerpt_field">
-		<%= f.text_field(:excerpt, :size => 100) %>
+		<%= f.text_field(:excerpt, :size => 200) %>
 	</span>  	
+	<label for="excerpt" id="post_excerpt_label" class="post_form_label">
+		summary
+	</label>
 </div>
 <div id="post_body">
 	<div class="wmd-panel" id="post_body_text">
