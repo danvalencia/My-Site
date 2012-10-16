@@ -1,7 +1,8 @@
 module ApplicationHelper
 	SOCIAL_LINKS_MAP = {
 		:twitter => "https://twitter.com/_DanValencia",
-		:linkedin => "http://www.linkedin.com/in/danvalencia"
+		:linkedin => "http://www.linkedin.com/in/danvalencia",
+		:github => "https://github.com/danvalencia"
 	}
 
 
@@ -43,12 +44,12 @@ module ApplicationHelper
 	def render_social_links
 		html_output = "<span id='social_links'>"
 		SOCIAL_LINKS_MAP.each do |k,v|
-			tag = "<a href='#{v}'>"
-			tag += "<%= image_tag '#{k}.png' %>"
+			tag = "<a class='social_link' href='#{v}'>"
+			tag += image_tag "#{k}.png"
 			tag += "</a>"
 			html_output += tag
 		end
-		html_output = "</span>"
+		html_output += "</span>"
 		html_output.html_safe
 	end
 end

@@ -71,6 +71,8 @@ body {
 		font-family: $headerFooterFont;
 		color: #FFF;
 		#title_bar{
+			padding-left: 25px;
+			padding-right: 25px;
 			a {
 				text-decoration: none;
 				color: white;
@@ -162,7 +164,11 @@ h2, h4 {
 
 #social_links {
 	width: 50px;
-    float: right;
+  float: right;
+}
+
+.social_link {
+	//margin-left: 2px;
 }
 
 #new_post_link {
