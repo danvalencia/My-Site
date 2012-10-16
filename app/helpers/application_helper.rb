@@ -44,10 +44,9 @@ module ApplicationHelper
 	def render_social_links
 		html_output = "<span id='social_links'>"
 		SOCIAL_LINKS_MAP.each do |k,v|
-			tag = "<a class='social_link' href='#{v}'>"
-			tag += image_tag "#{k}.png"
-			tag += "</a>"
-			html_output += tag
+			html_output += link_to(v, :class => 'social_link', :target => '_blank') do |t|
+				image_tag "#{k}.png"
+			end
 		end
 		html_output += "</span>"
 		html_output.html_safe
