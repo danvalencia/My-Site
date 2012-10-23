@@ -92,6 +92,7 @@ GEM
     multi_json (1.3.5)
     multi_xml (0.5.1)
     multipart-post (1.1.5)
+    newrelic_rpm (3.4.0.1)
     nokogiri (1.5.3)
     nokogiri (1.5.3-x86-mingw32)
     oauth2 (0.8.0)
@@ -177,6 +178,7 @@ DEPENDENCIES
   devise
   execjs!
   jquery-rails
+  newrelic_rpm
   omniauth-facebook
   pg
   rails (= 3.2.3)
