@@ -6,14 +6,12 @@
 <div class="post">
 	<div class="post_title"><h1><%= @post.title %></h1></div>
 	<div class="post_author"> written by <%=@post.author.name%> on <%= prettify_date(@post.created_at) %></div>	
-	<hr/>
 	<div class="post_body"><%= @post.body_to_html.html_safe %></div>		
 
 	<!-- <div id="post_comment_title">Post a Comment</div> -->
 	<% unless @post.comments_disabled %>
-		<hr/>
 		<h3 id='comment_leave_title'>Leave a reply</h3>
-		<div>
+		<div id="comment_form">
 			<%= form_for [@post, @comment] do |f| %>
 				<div id="comment_errors">
 					 <%= render_error_messages_for(@comment) %>
