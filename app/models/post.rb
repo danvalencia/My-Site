@@ -3,7 +3,8 @@ require 'redcarpet'
 class Post < ActiveRecord::Base
   attr_accessible :body, :excerpt, :title, :comments_disabled
   has_many :comments, :foreign_key => 'parent_post_id'
-  validates_presence_of :title, :excerpt, :body
+  belongs_to :author, :class_name => "User", :foreign_key => 'user_id'
+  validates_presence_of :title, :excerpt, :body, :user_id
   validates_uniqueness_of :title
 
   def body_to_html

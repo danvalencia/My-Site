@@ -1,9 +1,11 @@
 <% @posts.each do |p| %>
 	<div class="post">
-		<div class="post_title"><h2><%= link_to p.title, post_path(p) %></h2></div>
+		<span class="post_title"><h1><%= link_to p.title, post_path(p) %></h1></span>
     <% if current_user.try("admin?") %>
       <span class="post_edit_link"><%= link_to "Edit", edit_post_path(p.id)%></span>
     <% end %>
-		<div class="post_excerpt"><%= p.excerpt %></div>		
+		<!-- <div class="post_excerpt"><%= p.excerpt %></div>		 -->
+    <div class="post_author">written by <%=p.author.name%> on <%= prettify_date(p.created_at) %></div>
+    <div class="post_body"><%= p.body_to_html.html_safe %></div>    
 	</div>
 <% end %>

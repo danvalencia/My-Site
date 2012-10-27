@@ -3,10 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post {
-	margin: 10px 0px 20px 0px;
+	margin: 50px 0px 50px 0px;
+	margin-bottom: 3em;
+	margin-top: 2.5em;
+	padding-bottom: 4em;
+
 	hr {
 		border: 1px dashed #CCCCCC;
 	}
+	border-bottom: 1px solid #CCC;
 }
 
 h2 {
