@@ -99,9 +99,6 @@ body {
 	hr {
 		width: 100%;
 	}
-	a {
-		color: black;
-	}
 }
 
 .black_font {
@@ -160,6 +157,33 @@ h2, h4 {
 		}
 		
 	}
+}
+
+.comments_link {
+	//float: right;
+	position: relative;
+	font-size: 11px;
+	text-align: center;
+	background: #FF3019;
+	color: #FFF;
+	a {
+		text-decoration: none;
+		color: #FFF;
+	}
+	margin-left: 30px;
+
+	padding: 5px;
+}
+
+/* creates the larger triangle */
+.comments_link:before {
+	content:"";
+	position:absolute;
+	bottom:-14px;
+	right:10;
+	border-width:0 0 15px 14px;
+	border-style:solid;
+	border-color:transparent #FF3019;
 }
 
 #social_links {

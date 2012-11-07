@@ -26,4 +26,18 @@ module PostsHelper
     end
     html_output.html_safe
   end
+
+  def build_post_comments_path(post)
+    if post.has_comments
+      if post.comments.size == 1
+        label = "#{post.comments.size} comment"
+      else
+        label = "#{post.comments.size} comments"
+      end
+    else
+      label = "+comment"
+    end
+    link_to(label, post_path(post, :anchor => "comment_leave_title"))
+  end
+
 end

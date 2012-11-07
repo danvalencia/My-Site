@@ -51,4 +51,6 @@ module ApplicationHelper
 		html_output += "</span>"
 		html_output.html_safe
 	end
+
+
 end
