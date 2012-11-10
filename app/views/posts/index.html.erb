@@ -3,7 +3,7 @@
 		<span class="post_title"><h1><%= link_to p.title, post_path(p) %></h1></span>
         <span class="comments_link <%= p.has_comments ? "" : "no_comments" %>"><%= build_post_comments_path(p) %></span>
     <% if current_user.try("admin?") %>
-      <span class="post_edit_link"><%= link_to "Edit", edit_post_path(p.id)%></span>
+      <div class="post_edit_link"><%= link_to "Edit", edit_post_path(p.id)%></div>
     <% end %>
 		<!-- <div class="post_excerpt"><%= p.excerpt %></div>		 -->
     <div class="post_author">written by <%=p.author.name%> on <%= prettify_date(p.created_at) %></div>
