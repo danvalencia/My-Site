@@ -46,6 +46,7 @@ body {
 
 	h1{
 		font-size: 40px;
+		display: inline;
 	}
 
 	h1,h2,h3,h4,h5,h6 {
@@ -111,6 +112,9 @@ body {
 	color: #000;
 }
 
+.post_tile {
+
+}
 
 #post_excerpt {
 	p {
@@ -164,20 +168,21 @@ h2, h4 {
 		
 	}
 }
-
 .comments_link {
 	//float: right;
 	position: relative;
-	font-size: 11px;
+	font-size: 9px;
 	text-align: center;
 	background: #FF3019;
 	color: #FFF;
+	border-color: #FF3019;
 	a {
 		text-decoration: none;
 		color: #FFF;
 	}
-	margin-left: 30px;
+	margin-left: 3px;
 	padding: 5px;
+	top: -33px;
 
 	-moz-border-radius: $comment_link_radius;
   -webkit-border-radius: $comment_link_radius;
@@ -193,7 +198,12 @@ h2, h4 {
 	right:10;
 	border-width:0 0 15px 14px;
 	border-style:solid;
-	border-color:transparent #FF3019;
+	border-color:transparent inherit;
+}
+
+.no_comments{
+	background: #56E756;
+	border-color: #56E756;
 }
 
 #social_links {
