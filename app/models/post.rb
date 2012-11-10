@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   has_many :comments, :foreign_key => 'parent_post_id'
   belongs_to :author, :class_name => "User", :foreign_key => 'user_id'
   validates_presence_of :title, :excerpt, :body, :user_id
+  validates :title, :length => { :maximum => 35 }
   validates_uniqueness_of :title
 
   def body_to_html
