@@ -8,6 +8,7 @@ $maxWidth: 800px;
 $topBarHeight: 40px;
 $bodyWidth: 1024px;
 $headerFooterFont: Myriad Pro,Calibri,Lucida Grande,Lucida Sans,Lucida Sans Unicode,Verdana,sans-serif;
+$comment_link_radius: 6px;
 
 .strikethrough {
 	text-decoration: line-through;
@@ -46,6 +47,7 @@ body {
 	h1,h2,h3,h4,h5,h6 {
 		padding-top: 10px;
 	}
+
 	#top_bar{
 		position: fixed;
 		z-index: 1;
@@ -171,8 +173,12 @@ h2, h4 {
 		color: #FFF;
 	}
 	margin-left: 30px;
-
 	padding: 5px;
+
+	-moz-border-radius: $comment_link_radius;
+  -webkit-border-radius: $comment_link_radius;
+  -khtml-border-radius: $comment_link_radius;
+  border-radius: $comment_link_radius;
 }
 
 /* creates the larger triangle */

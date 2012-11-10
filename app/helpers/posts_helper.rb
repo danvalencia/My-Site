@@ -35,7 +35,7 @@ module PostsHelper
         label = "#{post.comments.size} comments"
       end
     else
-      label = "+comment"
+      label = "add comment"
     end
     link_to(label, post_path(post, :anchor => "comment_leave_title"))
   end
