@@ -22,7 +22,6 @@ body {
 	font-family: 'Merriweather', serif;
 	width: 100%;
 	min-height: 768px;
-	font-size: 100%;
 	line-height: 1.75em;
 	p {
 		//margin-left: 10px
@@ -44,6 +43,11 @@ body {
 		}		
 	}
 	text-align:justify;
+
+	h1{
+		font-size: 40px;
+	}
+
 	h1,h2,h3,h4,h5,h6 {
 		padding-top: 10px;
 	}
