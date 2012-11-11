@@ -7,7 +7,7 @@
 $maxWidth: 800px;
 $topBarHeight: 40px;
 $bodyWidth: 1024px;
-$headerFooterFont: Myriad Pro,Calibri,Lucida Grande,Lucida Sans,Lucida Sans Unicode,Verdana,sans-serif;
+$myriadProFont: Myriad Pro,Calibri,Lucida Grande,Lucida Sans,Lucida Sans Unicode,Verdana,sans-serif;
 $comment_link_radius: 6px;
 
 .strikethrough {
@@ -18,7 +18,6 @@ body {
 	max-width: 100%;
 	padding-left: 0px;
 	padding-top: 0px;
-	/*font-family: "clemente", Arial, "MS Trebuchet", sans-serif;*/
 	font-family: 'Merriweather', serif;
 	width: 100%;
 	min-height: 768px;
@@ -75,7 +74,7 @@ body {
 		width: $bodyWidth;
 		margin: auto;
 		padding-top: 6px;
-		font-family: $headerFooterFont;
+		font-family: $myriadProFont;
 		color: #FFF;
 		#title_bar{
 			padding-left: 25px;
@@ -169,13 +168,14 @@ h2, h4 {
 	}
 }
 .comments_link {
+	font-family: $myriadProFont;
 	//float: right;
 	position: relative;
-	font-size: 9px;
+	font-size: 10px;
 	text-align: center;
-	background: #FF3019;
+	background: #3D9EDF;
 	color: #FFF;
-	border-color: #FF3019;
+	border-color: #3D9EDF; 
 	a {
 		text-decoration: none;
 		color: #FFF;
@@ -221,7 +221,7 @@ h2, h4 {
 }
 
 #footer {
-	font-family: $headerFooterFont;
+	font-family: $myriadProFont;
 	#copyright {
 		width: 400px;
 		margin: auto;
