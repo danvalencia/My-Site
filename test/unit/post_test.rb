@@ -15,4 +15,16 @@ class PostTest < ActiveSupport::TestCase
     assert_not_nil child_comment
 
   end
+
+  test "Should set friendly url" do
+    post = Post.new
+    post.title = "My Super Blog Post"
+    post.body = "My super exciting body"
+    post.excerpt = "My Super Blog excerpt"
+    post.author = users(:admin)
+
+    post.save!
+
+    assert_equal "my_super_blog_post", post.friendly_url, "Expected friendly url to be set"
+  end
 end

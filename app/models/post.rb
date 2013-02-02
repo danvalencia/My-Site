@@ -7,6 +7,11 @@ class Post < ActiveRecord::Base
   validates_presence_of :title, :excerpt, :body, :user_id
   validates :title, :length => { :maximum => 35 }
   validates_uniqueness_of :title
+  before_create :set_friendly_url
+
+  def set_friendly_url
+    self.friendly_url = self.title.gsub(" ", "_").downcase unless self.title.nil?
+  end
 
   def body_to_html
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027215820) do
+ActiveRecord::Schema.define(:version => 20130202220151) do
 
   create_table "comment_authors", :force => true do |t|
     t.string   "email",      :null => false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20121027215820) do
     t.datetime "updated_at",        :null => false
     t.boolean  "comments_disabled"
     t.integer  "user_id"
+    t.string   "friendly_url"
   end
 
   create_table "users", :force => true do |t|
