@@ -1,4 +1,8 @@
 module PostsHelper
+
+  def friendly_post_path(post)
+    "articles/#{post.friendly_url}"
+  end
   
   def render_error_messages
     html_output = ""
@@ -37,7 +41,7 @@ module PostsHelper
     else
       label = "add comment"
     end
-    link_to(label, post_path(post, :anchor => "comment_leave_title"))
+    link_to(label, "#{friendly_post_path(post)}#comment_leave_title")
   end
 
 end

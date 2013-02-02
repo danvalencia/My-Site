@@ -6,7 +6,11 @@ class PostsController < ApplicationController
   end
   
   def show
-    @post = Post.find(params[:id])
+    if(params[:friendly_url])
+      @post = Post.find_by_friendly_url(params[:friendly_url])
+    else
+      @post = Post.find(params[:id])
+    end
     @comment = @post.comments.build
   end
 

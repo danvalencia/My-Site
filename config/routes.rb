@@ -10,6 +10,8 @@ Mysite::Application.routes.draw do
   #   root :to => 'posts#index'
   # end
 
+  match 'articles/:friendly_url' => 'posts#show'
+
   resources :posts do
     resources :comments
   end
