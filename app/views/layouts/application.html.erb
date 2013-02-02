@@ -7,8 +7,9 @@
   <%= stylesheet_link_tag "markdown_editor_overrides" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    "global", :media => "all" %>
-  <%= stylesheet_link_tag    "shCoreEclipse", :media => "all" %>
-  <%= stylesheet_link_tag    "shThemeEclipse", :media => "all" %>
+  <link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
+  <link href="http://alexgorbatchev.com/pub/sh/current/styles/shCoreEclipse.css" rel="stylesheet" type="text/css" />
+  <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeEclipse.css" rel="stylesheet" type="text/css" />
   <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,300' rel='stylesheet' type='text/css'/>
   <script type="text/javascript" src="//use.typekit.net/yyh7bvm.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -16,9 +17,13 @@
   <%= javascript_include_tag "Markdown.Converter.js" %>
   <%= javascript_include_tag "Markdown.Sanitizer.js" %>
   <%= javascript_include_tag "Markdown.Editor.js" %>
-  <%= javascript_include_tag "shCore" %>
-  <%= javascript_include_tag "shBrushJava" %>
-  <%= javascript_include_tag "shBrushXml" %>
+  <script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script>
+  <script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script> 
+  <script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script>
+  <script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script>
+  <script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushRuby.js"></script>
+  <script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCss.js"></script>
+  <script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
