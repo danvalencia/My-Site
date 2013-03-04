@@ -223,9 +223,12 @@ h2, h4 {
 #footer {
 	font-family: $myriadProFont;
 	#copyright {
-		width: 400px;
+		width: 100%;
 		margin: auto;
 		text-align: center;
+		a {
+			text-decoration: none;
+		}
 	}
 }
 
