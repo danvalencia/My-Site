@@ -41,6 +41,7 @@ module PostsHelper
     else
       label = "add comment"
     end
+    label = "comments"
     link_to(label, "#{friendly_post_path(post)}#comment_leave_title")
   end
 

@@ -6,26 +6,28 @@
 <div class="post">
 	<div class="post_title"><h1><%= @post.title %></h1></div>
 	<div class="post_author"> written by <%=@post.author.name%> on <%= prettify_date(@post.created_at) %></div>	
-	<div class="post_body"><%= @post.body_to_html.html_safe %></div>		
-	<!-- START: Livefyre Embed -->
-	<div id="livefyre-comments"></div>
-	<script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
-	<script type="text/javascript">
-	(function () {
-	    var articleId = fyre.conv.load.makeArticleId(null);
-	    fyre.conv.load({}, [{
-	        el: 'livefyre-comments',
-	        network: "livefyre.com",
-	        siteId: "338603",
-	        articleId: articleId,
-	        signed: false,
-	        collectionMeta: {
-	            articleId: articleId,
-	            url: fyre.conv.load.makeCollectionUrl(),
-	        }
-	    }], function() {});
-	}());
-	</script>
-	<!-- END: Livefyre Embed -->
+	<div class="post_body"><%= @post.body_to_html.html_safe %></div>	
+	<div id="comment_leave_title"	>
+		<!-- START: Livefyre Embed -->
+		<div id="livefyre-comments"></div>
+		<script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
+		<script type="text/javascript">
+		(function () {
+		    var articleId = fyre.conv.load.makeArticleId(null);
+		    fyre.conv.load({}, [{
+		        el: 'livefyre-comments',
+		        network: "livefyre.com",
+		        siteId: "338603",
+		        articleId: articleId,
+		        signed: false,
+		        collectionMeta: {
+		            articleId: articleId,
+		            url: fyre.conv.load.makeCollectionUrl(),
+		        }
+		    }], function() {});
+		}());
+		</script>
+		<!-- END: Livefyre Embed -->
+	</div>
             
 </div>
