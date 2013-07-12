@@ -7,25 +7,47 @@
 	<div class="post_title"><h1><%= @post.title %></h1></div>
 	<div class="post_author"> written by <%=@post.author.name%> on <%= prettify_date(@post.created_at) %></div>	
 	<div class="post_body"><%= @post.body_to_html.html_safe %></div>		
-	<!-- START: Livefyre Embed -->
-	<div id="livefyre-comments"></div>
-	<script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
-	<script type="text/javascript">
-	(function () {
-	    var articleId = fyre.conv.load.makeArticleId(null);
-	    fyre.conv.load({}, [{
-	        el: 'livefyre-comments',
-	        network: "livefyre.com",
-	        siteId: "338603",
-	        articleId: articleId,
-	        signed: false,
-	        collectionMeta: {
-	            articleId: articleId,
-	            url: fyre.conv.load.makeCollectionUrl(),
-	        }
-	    }], function() {});
-	}());
-	</script>
-	<!-- END: Livefyre Embed -->
-            
+
+	<!-- <div id="post_comment_title">Post a Comment</div> -->
+	<% unless @post.comments_disabled %>
+		<h3 id='comment_leave_title'>Leave a reply</h3>
+		<div id="comment_form">
+			<%= form_for [@post, @comment] do |f| %>
+				<div id="comment_errors">
+					 <%= render_error_messages_for(@comment) %>
+		    </div>
+				<div id="comment_body_field">
+					<%= f.text_area :body, :id => "comment_text_area", :rows => 10, :placeholder => "comment"%>
+				</div>
+		    <%= f.fields_for :comment_author do |builder|%>
+		    	<div>
+			    	<span id="comment_author_email">
+			    		<%= builder.text_field :email, :placeholder => "email (will not be displayed)"  %>
+			    	</span>
+		 	    </div>
+		    	<div>
+			    	<span id="comment_author_name">
+			    		<%= builder.text_field :name, :placeholder => "name" %>
+			    	</span>
+			    </div>
+		    	<div>
+			    	<span id="comment_author_website">
+			    		<%= builder.text_field :website, :placeholder => "website" %>
+			    	</span>
+			    </div>
+		    <% end %>
+				<div id="comment_submit">
+				    <%= f.submit "Post Comment" %>
+		    </div>
+		  <% end %>
+		</div>
+  <% else %>
+		<h3 id='comment_leave_title'>Comments are closed</h3>
+	<% end %>
+	<div>
+		<%= render_comments_header %>
+		<% @post.get_all_child_comments.each do |comment| %>
+			<%= render :partial => "posts/comment", :locals => {:comment => comment} %>
+		<% end %>
+	</div>
 </div>
