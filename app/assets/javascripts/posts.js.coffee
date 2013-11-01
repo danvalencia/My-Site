@@ -5,42 +5,57 @@
 converter = new Markdown.Converter()
 editor = new Markdown.Editor(converter)
 
-editor.hooks.set "insertImageDialog", (callback) ->
-	console.log "Works man"
+dialog_options = 
+	width: '500px'
+	resizable: false
+	autoOpen: false
+	open: (event, ui) -> 
+		$(".ui-dialog-titlebar-close").hide()
+
+$dialog = $("#dialog").dialog(dialog_options).unbind  "dialogclose" 			    		
+$imageUrl = $("#image_url")
+$uploadButton = $("#upload_btn")
+$imageLoader = $("#upload-image-loader")
+
+editor.hooks.set "insertImageDialog", (callback) =>
+
+	insertImage = => 
+		callback($imageUrl.val())
+		closeDialog()
+
+	closeDialog = =>
+		$imageUrl.val("")
+		$dialog.dialog "close"
+
 	$("#insert_image_btn").click (a,b,c) => 
-		callback($("#image_url").val())
-		$("#dialog").dialog "close"
-	
-	dialog_options = 
-		width: '500px'
-		resizable: false
+		insertImage()	
 
-	$("#dialog").dialog(dialog_options).unbind  "dialogclose" 			    		
-
-	$("#dialog").dialog().bind "dialogclose", (event, ui) =>
+	$dialog.dialog().bind "dialogclose", (event, ui) =>
+		closeDialog()
 		callback(null)
 	
-	$("#upload_btn").click ->
-		$("#upload-image-loader").show()
+	$uploadButton.click ->
+		$imageLoader.show()
 		formData = new FormData()
 		file_name = $('#image')[0].files[0]
 		formData.append "image", file_name
-		$.ajax '/image/upload'
+		$.ajax '/image/upload',
 			type: 'POST'
-			success: (responseText, b, c) ->
-				$("#dialog").dialog().unbind "dialogclose"
-				$("#image_url").val responseText.url
-				$("#upload-image-loader").hide()
-	        error: (responseText, b, c) =>
-				callback null
-				$("#dialog").close()
-				$("#upload-image-loader").hide()
-	        data: formData
-	        cache: false
-	        contentType: false
-	        processData: false
+			data: formData
+			cache: false
+			contentType: false
+			processData: false
+			success: (data, text_status, xml_http_request) ->
+				$dialog.dialog().unbind "dialogclose"
+				$imageUrl.val data.url
+				$imageLoader.hide()
+			error: (xml_http_request, text_status, error) ->
+				closeDialog()
+				$imageLoader.hide()
 
-		$("#upload-image-loader").show()
+		$imageLoader.show()
+
+	$dialog.dialog('open')
 	
 	return true
 
