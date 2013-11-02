@@ -34,7 +34,7 @@ gem 'therubyracer', :platform => :ruby
 
 gem 'redcarpet'
 
-gem 'devise'
+gem 'devise', '~> 2.2.3'
 
 gem 'execjs', :git => 'git://github.com/kennyj/execjs.git'
 
