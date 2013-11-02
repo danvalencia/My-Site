@@ -28,8 +28,7 @@ group :production do
   gem 'newrelic_rpm'
 end
 
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'jquery-rails', '~> 2.2.1'
 
 gem 'therubyracer', :platform => :ruby
 
