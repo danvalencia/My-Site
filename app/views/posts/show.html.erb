@@ -6,6 +6,10 @@
 <div class="post">
 	<div class="post_title"><h1><%= @post.title %></h1></div>
 	<div class="post_author"> written by <%=@post.author.name%> on <%= prettify_date(@post.created_at) %></div>	
+    <% if current_user.try("admin?") %>
+      <div class="post_edit_link"><%= link_to "Edit", edit_post_path(@post.id)%></div>
+    <% end %>
+
 	<div class="post_body"><%= @post.body_to_html.html_safe %></div>	
 	<div id="comment_leave_title"	>
 		<!-- START: Livefyre Embed -->
