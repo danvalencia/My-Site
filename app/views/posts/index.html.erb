@@ -1,8 +1,10 @@
 <% @posts.each do |p| %>
 	<div class="post">
 		<span class="post_title"><h3><%= link_to p.title, friendly_post_path(p) %></h3></span>
-		<!-- <div class="post_excerpt"><%= p.excerpt %></div>		 -->
         <span class="post_author">written by <%=p.author.name%> on <%= prettify_date(p.created_at) %></span>
+        <% unless p.excerpt.empty? %>
+            <div class="post_excerpt"><%= p.excerpt %><%= link_to "... continue reading", friendly_post_path(p) %></div>        
+        <% end %>
         <% if current_user.try("admin?") %>
           <div class="post_edit_link"><%= link_to "Edit", edit_post_path(p.id)%></div>
         <% end %>

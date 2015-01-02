@@ -15,16 +15,20 @@
 	margin-top: 20px;
 }
 
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
 .post_title {
-	a{
-		text-decoration: none;
-		color: black;
+	a {
+		color: black
 	}
-
-	a:hover{
-		text-decoration: underline;
-	}
-
+	
 	font-family: inherit;
 	
 	h3 {
