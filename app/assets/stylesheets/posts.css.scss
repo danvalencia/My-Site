@@ -3,25 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post {
-	margin: 50px 0px 50px 0px;
-	margin-bottom: 3em;
-	margin-top: 2.5em;
-	padding-bottom: 4em;
-
-	hr {
-		border: 1px dashed #CCCCCC;
-	}
-	border-bottom: 1px solid #CCC;
-}
-
-h2 {
-	
+	margin: 25px 0px 25px 0px;
 }
 
 .post_form_label {
 	width: 100px;
 	margin-left: 5px;
-	
 }
 
 .post_body {
@@ -40,8 +27,9 @@ h2 {
 
 	font-family: inherit;
 	
-	h3{
-		text-decoration: underline;
+	h3 {
+		display: inline;
+		text-decoration: none;
 		margin-top: 20px;
 		margin-bottom: 10px;		
 	}

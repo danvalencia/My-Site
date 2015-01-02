@@ -4,7 +4,8 @@
 	</script>
 <% end %>
 <div class="post">
-	<div class="post_title"><h1><%= @post.title %></h1></div>
+	<span class="post_title"><h1><%= @post.title %></h1></span>
+	<span class="comments_link <%= @post.has_comments ? "" : "no_comments" %>"><%= build_post_comments_path(@post) %></span>
 	<div class="post_author"> written by <%=@post.author.name%> on <%= prettify_date(@post.created_at) %></div>	
     <% if current_user.try("admin?") %>
       <div class="post_edit_link"><%= link_to "Edit", edit_post_path(@post.id)%></div>

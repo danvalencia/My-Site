@@ -3,7 +3,7 @@ require 'redcarpet'
 class ResumeController < ApplicationController
 
   def index
-    resume = File.open("#{Rails.public_path}/resume.md")
+    resume = File.open("#{Rails.public_path}/about.md")
     resume_string = resume.read
 
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
