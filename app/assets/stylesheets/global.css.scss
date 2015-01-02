@@ -83,7 +83,15 @@ body {
 				text-decoration: none;
 				color: white;
 			}
-			#login_logout_link {
+		}
+	}
+
+	img {
+		max-width: 100%;
+	}
+}	
+
+#login_logout_link {
 				width: 100px;
 				float : right;
 				a {
@@ -95,14 +103,8 @@ body {
 				li {
 					width: 100px;
 				}
-			}
-		}
-	}
+}
 
-	img {
-		max-width: 100%;
-	}
-}	
 #body {
 	width: 800px;
 	margin: auto;

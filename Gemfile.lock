@@ -174,7 +174,7 @@ DEPENDENCIES
   aws-sdk
   coffee-rails (~> 3.2.1)
   debugger
-  devise
+  devise (~> 2.2.3)
   execjs!
   jquery-rails (~> 2.2.1)
   newrelic_rpm

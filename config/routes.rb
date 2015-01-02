@@ -4,6 +4,8 @@ Mysite::Application.routes.draw do
 
   post "image/upload"
 
+  get "about", to: "resume#index"
+
   devise_for :users, :skip => :registrations
 
   # namespace :user do
