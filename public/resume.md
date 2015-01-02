@@ -10,6 +10,6 @@ However, over the last couple of years I've been focusing more on iOS projects, 
 
 ### Side Projects  
 
-My curiosity has also helped me get involved in a number of interesting side projects. Most notably I participated on a Burning Man art installation ([Hands by Dave Gertler](http://www.rollingstone.com/culture/pictures/burning-man-2013-the-people-20130905/stiltwalkers-0795928)). I worked on the wiring and installation for the ligthing and was in charge of writing the firmware.  I also wrote an iPad app for controlling the LEDs using bluetooth technology.  You can read more about that on my <a href="/articles/hands_(part_1)">blog posts</a>.  
+My curiosity has also helped me get involved in a number of interesting side projects. Most notably I participated on a Burning Man art installation ([Hands by Dave Gertler](http://www.rollingstone.com/culture/pictures/burning-man-2013-the-people-20130905/stiltwalkers-0795928)). I worked on the wiring and installation for the ligthing and was in charge of writing the firmware.  I also wrote an iPad app for controlling the LEDs using bluetooth technology.  You can read more about that on my <a href="/articles/hands_(part_i)">blog posts</a>.  
 
 Currently, I'm working on a cash monitoring system and web console for internet kiosks in México, using Java and Ruby on Rails.
