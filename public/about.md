@@ -1,8 +1,10 @@
 ## About Me
 
-I have over seven years of experience as a software engineer and technical lead across multiple projects. Curiosity is one of my biggest strengths, which has allowed me to get involved in the entire software development stack: web frontend and backend development, mobile app development, infrastructure engineering, QA and performance/load testing. I'm a generalist and believe in using the right tool for the right job.
+I'm from [Ensenada, México](http://en.wikipedia.org/wiki/Ensenada,_Baja_California), and currently reside in San Francisco, CA.
 
-I'm from [Ensenada, México](http://en.wikipedia.org/wiki/Ensenada,_Baja_California), but currently reside in San Francisco, CA.
+I have over seven years of experience as a software engineer and technical lead across multiple projects. Curiosity is one of my biggest strengths, which has allowed me to get involved in the entire software development stack: web frontend and backend development, mobile app development, infrastructure engineering, QA, and performance/load testing. I'm a generalist and believe in using the right tool for the job.
+
+**[Click here to view my full resume](/resume)**
 
 ### My Professional Career  
 

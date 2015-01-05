@@ -4,7 +4,8 @@ Mysite::Application.routes.draw do
 
   post "image/upload"
 
-  get "about", to: "resume#index"
+  get "about", to: "resume#about"
+  get "resume", to: "resume#index"
 
   devise_for :users, :skip => :registrations
 

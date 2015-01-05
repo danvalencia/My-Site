@@ -1,14 +1,21 @@
-require 'redcarpet'
+require 'mysite/markdown_service'
 
 class ResumeController < ApplicationController
-
+  
   def index
-    resume = File.open("#{Rails.public_path}/about.md")
-    resume_string = resume.read
+    render_markdown_file "#{Rails.public_path}/resume.md"
+  end
 
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-            :autolink => true, :space_after_headers => true, :strikethrough => true, :superscript => true)    
-    @resume_html = markdown.render resume_string
+  def about
+    render_markdown_file "#{Rails.public_path}/about.md"
+  end
+
+private
+
+  def render_markdown_file(file)
+    markdown_service = Mysite::MarkdownService.new
+    @html_str = markdown_service.convert_from_file file
+    render :default
   end
 
 end
