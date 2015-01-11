@@ -22,6 +22,7 @@ end
 
 group :development do
  gem 'debugger'
+ gem 'wkhtmltopdf-binary'
 end
 
 group :production do
@@ -43,6 +44,8 @@ gem 'aws-sdk'
 gem 'omniauth-facebook'
  
 gem 'thin'
+
+gem 'pdfkit'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
