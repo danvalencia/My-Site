@@ -1,3 +1,5 @@
+**[Click to download PDF version of my resume](/daniel-valencia-resume.pdf)**
+
 ## Daniel Valencia, Software Engineer
 
 ### Professional Summary  
