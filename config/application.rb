@@ -70,6 +70,5 @@ module Mysite
     config.facebook_app.secret = ENV["FACEBOOK_APP_SECRET"]
     
     config.assets.initialize_on_precompile = false
-    config.middleware.use PDFKit::Middleware, {}, :only => ['/resume']
   end
 end

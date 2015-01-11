@@ -16,9 +16,8 @@ private
     markdown_service = Mysite::MarkdownService.new
     @html_str = markdown_service.convert_from_file file
     respond_to do |format|
-      # format.html {render :default}
       format.html {render "default"}
-      format.pdf {render html: @html_str, layout: false}
+      # format.pdf {render html: @html_str, layout: false}
     end
   end
 
