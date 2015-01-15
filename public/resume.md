@@ -4,7 +4,7 @@
 
 ### Professional Summary  
 
-Daniel has over seven years of experience as a software engineer and technical lead across multiple projects. Daniel’s strength lies on his breadth of knowledge across the development stack:  UI, mobile app development, backend development, infrastructure engineering, QA and performance/load testing.  Daniel has strong expertise in Java based application development and design in the ecommerce space using tools like Adobe CQ5, Endeca and ATG.  He develops code using industry best practices such as Continuous Integration, TDD and code analysis, always treating Software Development as a craft. 
+Daniel has over seven years of experience as a software engineer and technical lead across multiple projects. Daniel’s strength lies on his breadth of knowledge across the development stack:  UI, mobile app development, backend development, infrastructure engineering, QA and performance/load testing.  Daniel has strong expertise in Java based web application development in the ecommerce space, and he's proficient in other platforms such as Ruby on Rails and iOS.  He develops code using industry best practices such as Continuous Integration, TDD and code analysis, always treating Software Development as a craft. 
 
 ### *Senior Software Engineer*, Tacit Knowledge Inc., San Francisco, CA (2011 - Present)
 
@@ -27,13 +27,6 @@ Daniel has over seven years of experience as a software engineer and technical l
 - Designed and implemented backend components for consuming external web service for car comparison functionality.
 - Contributed to key frontend functionality and bug fixes using Javascript and Objective-C.
 - Coached and mentored team members.
-
-#### Leapfrog Inc. 
-- Refactored dozens of existing components and templates by replacing Java scriplets with JSTL tags and EL functions that can be better reused and unit tested.
-- Wrote mobile friendly components and templates for main site pages.
-- Wrote CQ5 component for integrating with Bazaarvoice’s REST API in the frontend using JSONP mechanism for cross-domain requests.
-- Wrote CQ5 component for email subscription service using CORS AJAX Requests.
-- Fixed dozens of defects.
 
 #### Nike, Library Project
 - Developed and executed performance testing strategy for Nike’s Custom DAM solution.
@@ -103,15 +96,23 @@ I'm the main author and maintainer for the [JCR-Mock](https://github.com/tacitkn
     - Wrote iOS application to interface with LEDs by means of sending commands via Bluetooth.
     - Wrote iOS custom drawing UI using Core Graphics library to interface with LEDs via Bluetooth (https://vimeo.com/72212981).
 
+- Maquinet Cash Monitor
+	- Cash monitor for internet kiosks, comprised of two components: a daemon which runs in the kiosk (written in Java) and a web application (written in Ruby on Rails).
+	- Responsive web site with dashboard with graphs built with D3.js (nvd3).
+	- Created Vagrant setup using chef to configure and provision both development and production environments.
+	- Kiosk authentication to server using SSL client certs.
+
 ### Education & Training
 
-- Bachelors degree in Electroninc Engineering from ITESO (Western Institute of Technology and Higher Education) in Guadalajara, México.
+- Bachelors degree in Electronic Engineering from ITESO (Western Institute of Technology and Higher Education) in Guadalajara, México.
 - Sun Certified Java Programmer (SCJP)
 - Proficient in the following technologies:
-    - Java (JEE, J2SE), .NET, Ruby, Groovy, Bash, Objective C, Swift.
-    - Linux, Unix, Mac OS X, Windows, iOS, Android
-    - Oracle, SQL Server, MySQL, DB2
+    - Java (JEE, J2SE), Ruby (Rails), Bash, Objective-C.
+    - Linux, Mac OS X, Windows, iOS
+    - SQL Server, MySQL, PostgreSQL
     - Adobe AEM (CQ5), Endeca, ATG
-    - Javascript, Coffeescript, JQuery, Ext JS
+    - Javascript, Coffeescript, JQuery, D3.js, Ext JS
     - Chef, Vagrant, Jenkins
     - Git, SVN
+- Current obsession:
+	- iOS development with Swift.
