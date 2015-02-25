@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.2.0"
+ruby "2.1.0"
 
 gem 'rails', '3.2.12'
 
@@ -34,7 +34,7 @@ gem 'devise', '~> 2.2.3'
 
 gem 'execjs', :git => 'git://github.com/kennyj/execjs.git'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.5.2'
 
 gem 'omniauth-facebook'
  
