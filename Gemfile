@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "1.9.3"
+ruby "2.2.0"
 
 gem 'rails', '3.2.12'
 
@@ -20,12 +20,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development do
- gem 'debugger'
-end
-
 group :production do
-  gem 'newrelic_rpm'
+  gem 'newrelic_rpm', '~> 3.10.0.279'
 end
 
 gem 'jquery-rails', '~> 2.2.1'
