@@ -20,9 +20,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :production do
-  gem 'newrelic_rpm', '~> 3.10.0.279'
-end
+#group :production do
+#  gem 'newrelic_rpm', '~> 3.10.0.279'
+#end
 
 gem 'jquery-rails', '~> 2.2.1'
 
