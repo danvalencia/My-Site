@@ -38,7 +38,7 @@ gem 'aws-sdk'
 
 gem 'omniauth-facebook'
  
-gem 'thin'
+gem 'puma'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
